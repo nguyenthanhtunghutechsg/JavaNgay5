@@ -15,13 +15,21 @@ import LTJava.C5.Ngay5.models.ProductRepository;
 public class ProductServices {
 	@Autowired
 	private ProductRepository productRepository;
-	
-	public List<Product> findAll(){
+
+	public List<Product> findAll() {
 		return productRepository.findAll();
 	}
-	
-	public Product get(Integer ID) {
-		return productRepository.findById(ID).get();
+
+	public Product get(Integer Id) {
+		return productRepository.findById(Id).get();
+	}
+
+	public void save(Product product) {
+		productRepository.save(product);
+	}
+
+	public void delete(Integer Id) {
+		productRepository.deleteById(Id);
 	}
 
 }
