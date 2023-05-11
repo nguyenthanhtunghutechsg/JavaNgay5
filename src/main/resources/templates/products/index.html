@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/css/bootstrap.min.css" />
+<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+<script type="text/javascript"
+	src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div align="center" class="container text-center">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Brand</th>
+					<th>Price</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="product: ${Products}">
+					<td th:text="${product.Id}">Product ID</td>
+					<td th:text="${product.Name}">Name</td>
+					<td th:text="${product.Brand}">Brand</td>
+					<td th:text="${product.Price}">Price</td>
+				</tr>
+			</tbody>
+
+		</table>
+	</div>
+
+</body>
+</html>
